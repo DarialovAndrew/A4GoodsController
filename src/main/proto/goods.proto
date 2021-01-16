@@ -1,0 +1,36 @@
+syntax = "proto3";
+package com.example.demo.service.model;
+option java_multiple_files = true;
+
+service goodsService{
+  rpc addShower(addShowerRequest) returns(addShowerResponse);
+  rpc deleteShower(deleteShowerRequest) returns(deleteShowerResponse);
+  rpc getAllShowers(getAllShowersRequest) returns(getAllShowersResponse);
+}
+message ProtoShower{
+  int32 number=1;
+  bool free=2;
+}
+message addShowerRequest{
+  ProtoShower shower=1;
+}
+message addShowerResponse{
+
+}
+message deleteShowerRequest{
+  string id = 1;
+}
+message deleteShowerResponse{
+
+}
+message getAllShowersRequest{
+
+}
+message getShowerResponse{
+  string id=1;
+  int32 number=2;
+  bool free=3;
+}
+message getAllShowersResponse{
+  repeated getShowerResponse shower=1;
+}
